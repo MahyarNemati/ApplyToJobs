@@ -7,6 +7,7 @@ Keywords for finding specific job titles fx. Machine Learning Engineer, Data Sci
 The location where you are currently looking for a position.
 The driver path to your downloaded webdriver.
 With this tool you can easily automate the process of applying for jobs on LinkedIn!
+All comments have been written to provid emore insights to the questions which might arise.
 """
 
 import time
@@ -33,7 +34,7 @@ class EasyApplyLinkedin:
         self.driver = webdriver.Chrome(data['driver_path'])
 
     def login_linkedin(self):
-        """This function logs into your personal LinkedIn profile"""
+        """This function logs into your personal LinkedIn profile using the driver you have used"""
 
         # go to the LinkedIn login url
         self.driver.get("https://www.linkedin.com/login")
@@ -48,7 +49,7 @@ class EasyApplyLinkedin:
         login_pass.send_keys(Keys.RETURN)
     
     def job_search(self):
-        """This function goes to the 'Jobs' section a looks for all the jobs that matches the keywords and location"""
+        """This function goes to the Jobs section and will be looking for all the jobs that matches the keywords and location"""
 
         # go to Jobs
         jobs_link = self.driver.find_element_by_link_text('Jobs')
